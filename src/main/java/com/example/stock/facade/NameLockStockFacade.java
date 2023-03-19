@@ -20,10 +20,10 @@ public class NameLockStockFacade {
     @Transactional
     public void decrease(Long id, Long quantity) {
         try {
-            lockRepository.getLock(id.toString());
+//            lockRepository.getLock(id.toString());
             stockService.decrease(id, quantity);
         } finally {
-            lockRepository.releaseLock(id.toString());
+//            lockRepository.releaseLock(id.toString());
         }
     }
 }
